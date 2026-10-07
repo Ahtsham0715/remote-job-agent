@@ -1,0 +1,9 @@
+.venv/
+state/
+__pycache__/
+.env
+profile.json
+output/
+github-evidence.json
+inbox.json
+config.tmp
