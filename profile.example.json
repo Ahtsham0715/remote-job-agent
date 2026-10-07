@@ -1,0 +1,45 @@
+{
+  "name": "Your Name",
+  "email": "",
+  "phone": "",
+  "location": "Punjab, Pakistan",
+  "website": "",
+  "github": "",
+  "linkedin": "",
+  "headline": "Flutter Developer",
+  "summary": "Flutter Developer & AI Engineer focused on building privacy-first, intelligent mobile applications. Experienced in on-device machine learning, clean architecture and scalable, offline-capable apps.",
+  "skills": [
+    "Flutter",
+    "Dart",
+    "Riverpod",
+    "GetX",
+    "Provider",
+    "TensorFlow Lite",
+    "Core ML",
+    "Firebase",
+    "RevenueCat",
+    "Google Maps API",
+    "WebRTC",
+    "Node.js",
+    "MongoDB",
+    "Python",
+    "Django",
+    "On-Device ML",
+    "AWS"
+  ],
+  "experience": [],
+  "education": [],
+  "projects": [
+    {
+      "name": "Your Project",
+      "skills": [
+        "Flutter"
+      ],
+      "bullets": [
+        "Add an accurate project achievement."
+      ]
+    }
+  ],
+  "verified": false,
+  "answers": {}
+}

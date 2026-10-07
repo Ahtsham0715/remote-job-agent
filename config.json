@@ -1,0 +1,39 @@
+{
+  "timezone": "Asia/Karachi",
+  "hours": [
+    8,
+    11,
+    14,
+    17,
+    20
+  ],
+  "keywords": [
+    "flutter",
+    "dart",
+    "mobile developer",
+    "mobile engineer",
+    "full stack",
+    "full-stack",
+    "fullstack",
+    "solutions architect",
+    "solution architect"
+  ],
+  "allowed_locations": [
+    "worldwide",
+    "anywhere",
+    "global",
+    "pakistan"
+  ],
+  "minimum_score": 20,
+  "max_applications_per_day": 5,
+  "max_prepared_per_run": 10,
+  "auto_submit": true,
+  "remotive_cache_hours": 8,
+  "lever_companies": [
+    "idt"
+  ],
+  "greenhouse_boards": [],
+  "max_projects_on_cv": 5,
+  "enabled": true,
+  "skipped_job_ids": []
+}

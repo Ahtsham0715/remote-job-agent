@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {control} from '../worker/index.js';
+let stored;
+const bucket={get:async()=>stored?{etag:String(stored.revision),json:async()=>structuredClone(stored)}:null,put:async(k,v,options)=>{if(stored&&options.onlyIf?.etagMatches!==String(stored.revision))return null;stored=JSON.parse(v);return {etag:String(stored.revision)}}};
+assert.equal((await control(bucket,{action:'pause',revision:0})).status,200);assert.equal(stored.enabled,false);
+assert.equal((await control(bucket,{action:'request-run',revision:1})).status,400);
+assert.equal((await control(bucket,{action:'resume',revision:0})).status,409);
+assert.equal((await control(bucket,{action:'resume',revision:1})).status,200);
+assert.equal((await control(bucket,{action:'settings',revision:2,auto_submit:false,max_applications_per_day:50})).status,400);
+assert.equal((await control(bucket,{action:'settings',revision:2,auto_submit:false,max_applications_per_day:3})).status,200);
+assert.equal(stored.auto_submit,false);assert.equal(stored.max_applications_per_day,3);
+const source=await readFile('worker/index.js','utf8');
+const page=(await (await import('../worker/index.js')).default.fetch(new Request('https://test.invalid/'),{})).text();
+await writeFile('/tmp/dashboard-client.js',(await page).match(/<script>([\s\S]*?)<\/script>/)[1]);
+console.log('Persisted controls, limits and conflict protection passed');

@@ -1,0 +1,6 @@
+.git
+.venv
+state
+output
+__pycache__
+profile.json
